@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<a id="test1" href="#">test1</a>
+<a id="test2" href="#">test2</a>
+
+<script type="text/javascript">
+$(function(){
+	$('#test1').click(function(){
+		$.ajax({
+			url:'http://a.msdx1.com:2222/sub',
+			type:'get',
+			xhrFields: {
+		        withCredentials: true
+		    },
+		    crossDomain: true,
+			success:function(data){
+				alert(data);
+			}
+		})
+	})
+	$('#test2').click(function(){
+		$.ajax({
+			url:'http://b.msdx1.com:2223/sub',
+			type:'get',
+			xhrFields: {
+		        withCredentials: true
+		    },
+		    crossDomain: true,
+			success:function(data){
+				alert(data);
+			}
+		})
+	})
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<a href="b.html">b.html</a>
+<br/>
+<button>button</button>
+
+<script type="text/javascript">
+$(function(){
+	$('button').click(function(){
+		$.ajax({
+			url:'http://a.msdx1.com:2223/add?a=1&b=2',
+			type:'get',
+		    xhrFields: {
+		        withCredentials: true
+		    },
+		    crossDomain: true, // 设置跨域请求
+			success:function(data){
+				alert(data);
+			}
+		})
+	})
+})
+</script>
+</body>
+</html>
